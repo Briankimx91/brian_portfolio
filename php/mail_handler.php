@@ -15,7 +15,7 @@
     $mail->SMTPAuth = true;     // turn on SMTP authentication
     $mail->Username = EMAIL_USER;
     $mail->Password = EMAIL_PASS;
-    $mail->Port = 465;
+    $mail->Port = 587;
     $mail->SMTPSecure = 'tls';
 
     $mail->From = $email;
