@@ -15,7 +15,7 @@
     $mail->Username = EMAIL_USER;
     $mail->Password = EMAIL_PASS;
     $mail->Port = 465;
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = 'tls';
 
     $mail->From = $email;
     $mail->FromName = $name;
@@ -31,7 +31,6 @@
     $mail->Body = "message:$msg and phone number:$tel";
     mail($name, $msg, $email, $tel);
     if(!$mail->send()) {
-        echo 'Message was not sent.';
         echo 'Mailer error: ' . $mail->ErrorInfo;
     }
     echo 'Message has been sent.';
