@@ -6,7 +6,6 @@
     $msg = $_REQUEST['message'];
     $name = $_REQUEST['name'];
     $tel = $_REQUEST['tel'];
-    $result = array();
 
     $mail = new PHPMailer();
 
@@ -15,7 +14,8 @@
     $mail->SMTPAuth = true;     // turn on SMTP authentication
     $mail->Username = EMAIL_USER;
     $mail->Password = EMAIL_PASS;
-    $mail->Port = 587;
+    $mail->Port = 465;
+    $mail->SMTPSecure = 'ssl';
 
     $mail->From = $email;
     $mail->FromName = $name;
@@ -23,7 +23,7 @@
     $mail->AddReplyTo($email, $name);
 
 
-    $mail->WordWrap = 50;                                 // set word wrap to 50 characters
+    $mail->WordWrap = 500;                                 // set word wrap to 50 characters
     $mail->IsHTML(true);                                  // set email format to HTML
 
 
